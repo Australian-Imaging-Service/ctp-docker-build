@@ -1,4 +1,4 @@
-FROM debian:12.14-slim as build
+FROM eclipse-temurin:25-jre-noble as build
 
 RUN apt-get update && apt-get -y install \
  curl \
@@ -15,12 +15,7 @@ RUN mkdir -p /JavaPrograms/ext /JavaPrograms/lib \
  && mv /JavaPrograms/ext/*.so /JavaPrograms/lib ||: \
  && unzip CTP-installer.jar -d /JavaPrograms
 
-
-FROM debian:12.14-slim
-
-RUN apt-get update && apt-get -y install \
- openjdk-17-jre-headless \
- && rm -rf /var/lib/apt/lists/*
+FROM eclipse-temurin:25-jre-noble
 
 COPY --from=build /JavaPrograms/ /JavaPrograms/
 
