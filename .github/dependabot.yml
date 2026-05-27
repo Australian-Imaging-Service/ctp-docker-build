@@ -5,5 +5,5 @@ updates:
     schedule:
       interval: "daily"
     ignore:
-      - dependancy-name: "debian"
+      - dependency-name: "debian"
         update-types: ["version-update:semver-major"]
