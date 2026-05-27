@@ -1,4 +1,4 @@
-FROM debian:stable-slim as build
+FROM debian:12.14-slim as build
 
 RUN apt-get update && apt-get -y install \
  curl \
@@ -16,7 +16,7 @@ RUN mkdir -p /JavaPrograms/ext /JavaPrograms/lib \
  && unzip CTP-installer.jar -d /JavaPrograms
 
 
-FROM debian:stable-slim
+FROM debian:12.14-slim
 
 RUN apt-get update && apt-get -y install \
  openjdk-17-jre-headless \

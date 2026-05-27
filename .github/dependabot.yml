@@ -2,6 +2,8 @@ version: 2
 updates:
   - package-ecosystem: docker
     directory: "/"
-    patterns: ["debian"]
     schedule:
       interval: "daily"
+    ignore:
+      - dependancy-name: "debian"
+        update-types: ["version-update:semver-major"]
