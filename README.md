@@ -4,4 +4,4 @@ This is a repository of AIS CTP docker images which runs the Clinical Trial Proc
 
 The image includes the CTP installer at https://github.com/johnperry/CTP/blob/master/products/CTP-installer.jar 
 
-Current version: 2025.03.26
+Current version: 2025.10.31
