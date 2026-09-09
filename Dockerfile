@@ -1,4 +1,4 @@
-FROM eclipse-temurin:25-jre-noble@sha256:b4c93a50fc67612798db73d68ca3b0ee4ebdd51736e59cca370e689b9797037e as build
+FROM eclipse-temurin:25-jre-noble@sha256:d120abd9d8d7dec94520ce974ece62d0e4eed8576eb00bbc84e6128307ab48ef as build
 
 RUN apt-get update && apt-get -y install \
  curl \
@@ -15,7 +15,7 @@ RUN mkdir -p /JavaPrograms/ext /JavaPrograms/lib \
  && mv /JavaPrograms/ext/*.so /JavaPrograms/lib ||: \
  && unzip CTP-installer.jar -d /JavaPrograms
 
-FROM eclipse-temurin:25-jre-noble@sha256:b4c93a50fc67612798db73d68ca3b0ee4ebdd51736e59cca370e689b9797037e
+FROM eclipse-temurin:25-jre-noble@sha256:d120abd9d8d7dec94520ce974ece62d0e4eed8576eb00bbc84e6128307ab48ef
 
 COPY --from=build /JavaPrograms/ /JavaPrograms/
 
